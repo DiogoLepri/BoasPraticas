@@ -150,5 +150,3 @@ pip install -r requirements.txt
 python run.py
 ```
 
-Agora você tem um projeto organizado, pronto para evoluir com mais qualidade.
-
