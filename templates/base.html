@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - {% block title %}{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .nav {
+            background: #444;
+            color: #fff;
+        }
+        .nav ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+        .nav a:hover {
+            background: #555;
+        }
+        .task {
+            background: #fff;
+            margin: 10px 0;
+            padding: 20px;
+            border-left: 5px solid #333;
+        }
+        .task h3 {
+            margin-top: 0;
+        }
+        .task .priority-high {
+            border-left-color: #f44336;
+        }
+        .task .priority-medium {
+            border-left-color: #ff9800;
+        }
+        .task .priority-low {
+            border-left-color: #4caf50;
+        }
+        .status-todo {
+            background-color: #ffecb3;
+        }
+        .status-in-progress {
+            background-color: #b3e5fc;
+        }
+        .status-done {
+            background-color: #c8e6c9;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+        input[type="submit"],
+        button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover,
+        button:hover {
+            background: #444;
+        }
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Task Manager</h1>
+    </div>
+    
+    <div class="nav">
+        <ul>
+            {% if session.user_id %}
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('add_task') }}">Add Task</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
