@@ -1,4 +1,4 @@
-# Task Manager - Refatoração e Boas Práticas
+# Fake Trello - Refatoração e Boas Práticas
 
 Este projeto é um exemplo prático da importância da organização e aplicação de boas práticas em desenvolvimento web.
 
@@ -21,7 +21,7 @@ git checkout refatorado
 
 ## Sobre o Projeto
 
-O **Task Manager** é um aplicativo web desenvolvido em Python usando Flask para gerenciar tarefas do dia a dia. Possui recursos básicos como cadastro e login, além da criação, edição e exclusão de tarefas. Cada tarefa pode ter título, descrição, prioridade, status e data de vencimento.
+O **Fake Trello** é um aplicativo web desenvolvido em Python usando Flask para gerenciar tarefas do dia a dia. Possui recursos básicos como cadastro e login, além da criação, edição e exclusão de tarefas. Cada tarefa pode ter título, descrição, prioridade, status e data de vencimento.
 
 ## Problemas Encontrados
 
@@ -108,15 +108,6 @@ templates/
       ├── add.html
       └── edit.html
 ```
-
-### Tratamento de Erros e Feedback
-
-Adicionei mensagens claras para o usuário usando Flash e melhorei a forma como os erros são tratados internamente.
-
-### Documentação
-
-Incluí comentários e docstrings claras em todos os módulos para facilitar futuras manutenções.
-
 ## Resultados
 
 Após a refatoração, obtive:
@@ -124,14 +115,6 @@ Após a refatoração, obtive:
 - **Facilidade de manutenção e expansão**.
 - **Maior segurança e clareza das configurações**.
 - **Facilidade para testes**.
-
-## Contribuições
-
-Este projeto foi desenvolvido individualmente, sendo responsável por:
-
-- Análise e identificação dos problemas no código original.
-- Planejamento da nova arquitetura.
-- Implementação das melhorias e documentação do processo.
 
 ## Executando o Projeto
 
