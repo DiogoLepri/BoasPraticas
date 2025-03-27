@@ -23,8 +23,6 @@ git checkout refatorado
 
 O **Task Manager** é um aplicativo web desenvolvido em Python usando Flask para gerenciar tarefas do dia a dia. Possui recursos básicos como cadastro e login, além da criação, edição e exclusão de tarefas. Cada tarefa pode ter título, descrição, prioridade, status e data de vencimento.
 
-Inicialmente, o projeto foi criado para funcionar rapidamente, sem foco na qualidade estrutural do código. O resultado foi um único arquivo com mais de 400 linhas, difícil de manter e evoluir.
-
 ## Problemas Encontrados
 
 Ao revisar o código original, identifiquei alguns pontos críticos:
