@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
 {% block title %}Login{% endblock %}
 {% block content %}
-    <h2>Login</h2>
-    {% if error %}
-        <div class="error">{{ error }}</div>
-    {% endif %}
     <form method="post">
+        <h2>Login to Your Account</h2>
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
         <div>
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username" required placeholder="Enter your username">
         </div>
         <div>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
         </div>
-        <div>
+        <div class="button-container">
             <input type="submit" value="Login">
         </div>
-        <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+        <p style="text-align: center; margin-top: 20px;">Don't have an account? <a href="{{ url_for('auth.register') }}">Register</a></p>
     </form>
 {% endblock %}

@@ -1,0 +1,318 @@
+/* 
+  Dark & Futuristic Theme for Task Manager
+  ----------------------------------------
+  - Minimal, neon-like accents
+  - Dark background
+  - Futuristic font (Orbitron)
+*/
+
+/* Root Variables: Colors & Shadows */
+:root {
+  --dark-bg: #121212;
+  --header-bg: #1f1f1f;
+  --primary-neon: #00d0ff; /* Neon green-cyan */
+  --accent-color: #e0e0e0;  /* Neon pinkish-red */
+  --text-color: #ffffff;
+  --shadow: 0 2px 15px rgba(0, 208, 255, 0.2);
+  --border-color: #333;
+}
+
+/* General Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* Container for main content */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+/* Header */
+.header {
+  background: var(--header-bg);
+  text-align: center;
+  position: relative;
+  padding: 2rem 0;
+  margin-bottom: 0;
+  box-shadow: var(--shadow);
+  /* subtle gradient glow behind the header */
+  background: linear-gradient(
+    135deg,
+    rgba(31,31,31,1) 0%,
+    rgba(31,31,31,0.7) 100%
+  );
+}
+
+/* Neon Title in the Header */
+.neon-title {
+  font-size: 2.5rem;
+  margin: 0;
+  color: var(--primary-neon);
+  text-shadow:
+    0 0 5px var(--primary-neon),
+    0 0 10px var(--primary-neon),
+    0 0 20px var(--primary-neon);
+  transition: text-shadow 0.3s ease;
+}
+
+.neon-title:hover {
+  text-shadow:
+    0 0 5px var(--primary-neon),
+    0 0 20px var(--primary-neon),
+    0 0 30px var(--primary-neon),
+    0 0 40px var(--primary-neon);
+}
+
+/* Navigation */
+.nav {
+  background: #1a1a1a;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.nav li {
+  margin: 0;
+}
+
+.nav a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Flash Messages */
+.flash-message {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+
+.success {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.error {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.info {
+  background-color: #3498db;
+  color: #fff;
+}
+
+/* Forms */
+form {
+  background: #1c1c1c;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--primary-neon);
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px var(--primary-neon);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: #2c2c2c;
+  color: var(--text-color);
+  font-family: inherit;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-neon);
+  box-shadow: 0 0 5px var(--primary-neon);
+  outline: none;
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+input[type="submit"],
+button {
+  background: var(--primary-neon);
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 0 10px var(--accent-color);
+  transform: translateY(-2px);
+}
+
+button.delete {
+  background-color: var(--accent-color);
+}
+
+button.delete:hover {
+  background-color: #ff336f;
+  box-shadow: 0 0 10px #ff336f;
+}
+
+/* Individual Task Cards */
+.task {
+  background: #1c1c1c;
+  margin: 1rem 0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 255, 195, 0.2);
+}
+
+.task h3 {
+  margin-top: 0;
+  color: var(--primary-neon);
+  font-size: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+/* Priority Indicators */
+.priority-high {
+  border-left: 4px solid var(--accent-color);
+}
+
+.priority-medium {
+  border-left: 4px solid #f39c12;
+}
+
+.priority-low {
+  border-left: 4px solid #2ecc71;
+}
+
+/* Status Indicators */
+.status-todo {
+  background: linear-gradient(to right, #1c1c1c, #2c2c2c);
+}
+
+.status-in-progress {
+  background: linear-gradient(to right, #1c1c1c, #22303f);
+}
+
+.status-done {
+  background: linear-gradient(to right, #1c1c1c, #203f2a);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  background: #1c1c1c;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  color: #999;
+  margin-bottom: 1rem;
+}
+
+.empty-state a {
+  color: var(--primary-neon);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.empty-state a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .nav ul {
+    flex-direction: column;
+  }
+
+  .nav a {
+    border-bottom: 1px solid #2a2a2a;
+    text-align: center;
+  }
+
+  .container {
+    width: 95%;
+    margin: 0.5rem auto;
+    padding: 1rem;
+  }
+
+  form {
+    padding: 1rem;
+  }
+}
